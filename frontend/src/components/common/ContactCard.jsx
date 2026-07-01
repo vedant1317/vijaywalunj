@@ -1,58 +1,72 @@
-import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import { MdPhone, MdEmail, MdLocationOn, MdLocalHospital, MdLocalPolice, MdWarning, MdSecurity, MdAccountBalance, MdInfo } from 'react-icons/md';
 
 const categoryColors = {
-  'Hospital': 'bg-green-50 border-green-200 text-green-700',
-  'Police': 'bg-blue-50 border-blue-200 text-blue-700',
-  'Traffic Police': 'bg-yellow-50 border-yellow-200 text-yellow-700',
-  'Emergency Helpline': 'bg-red-50 border-red-200 text-red-700',
-  'Disaster Management': 'bg-orange-50 border-orange-200 text-orange-700',
-  'NMMC': 'bg-purple-50 border-purple-200 text-purple-700',
-  'Other': 'bg-gray-50 border-gray-200 text-gray-700',
+  'Hospital': 'bg-green-900/10 border-green-600/30 text-green-700',
+  'Police': 'bg-blue-900/10 border-blue-600/30 text-blue-700',
+  'Traffic Police': 'bg-yellow-900/10 border-yellow-600/30 text-yellow-700',
+  'Emergency Helpline': 'bg-red-900/10 border-red-600/30 text-red-700',
+  'Disaster Management': 'bg-orange-900/10 border-orange-600/30 text-orange-700',
+  'NMMC': 'bg-purple-900/10 border-purple-600/30 text-purple-700',
+  'Other': 'bg-navy-900/10 border-navy-600/30 text-navy-700',
 };
 
 const categoryIcons = {
-  'Hospital': '🏥',
-  'Police': '👮',
-  'Traffic Police': '🚦',
-  'Emergency Helpline': '🆘',
-  'Disaster Management': '⛑️',
-  'NMMC': '🏛️',
-  'Other': '📋',
+  'Hospital': <MdLocalHospital />,
+  'Police': <MdLocalPolice />,
+  'Traffic Police': <MdWarning />,
+  'Emergency Helpline': <MdWarning />,
+  'Disaster Management': <MdSecurity />,
+  'NMMC': <MdAccountBalance />,
+  'Other': <MdInfo />,
 };
 
 const ContactCard = ({ name, phone, email, address, category, notes, isEmergency }) => {
   const colorClass = categoryColors[category] || categoryColors['Other'];
-  const icon = categoryIcons[category] || '📋';
+  const icon = categoryIcons[category] || <MdInfo />;
 
   return (
-    <div className={`card p-5 border ${isEmergency ? 'border-red-300 bg-red-50' : 'border-gray-100'} relative`}>
+    <div className={`glass-shard p-6 relative group ${isEmergency ? 'border-red-500/50 bg-red-900/5' : ''}`}>
       {isEmergency && (
-        <span className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">EMERGENCY</span>
+        <span className="absolute top-4 right-4 bg-red-600/10 text-red-600 text-[10px] tracking-widest font-bold uppercase px-3 py-1 border border-red-600/20" style={{clipPath:'polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%)'}}>
+          EMERGENCY
+        </span>
       )}
-      <div className="flex items-start gap-4">
-        <div className={`w-11 h-11 rounded-xl border flex items-center justify-center text-xl flex-shrink-0 ${colorClass}`}>
-          {icon}
-        </div>
-        <div className="flex-1 min-w-0">
-          <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full border mb-1 ${colorClass}`}>{category}</span>
-          <h3 className="font-bold text-navy-800 text-sm leading-tight mb-2">{name}</h3>
-          <div className="space-y-1">
-            <a href={`tel:${phone}`} className="flex items-center gap-2 text-sm text-saffron-600 font-semibold hover:text-saffron-700 transition-colors">
-              <MdPhone className="w-4 h-4 flex-shrink-0" /> {phone}
-            </a>
-            {email && (
-              <a href={`mailto:${email}`} className="flex items-center gap-2 text-xs text-gray-500 hover:text-navy-700 transition-colors">
-                <MdEmail className="w-3.5 h-3.5 flex-shrink-0" /> {email}
-              </a>
-            )}
-            {address && (
-              <div className="flex items-start gap-2 text-xs text-gray-500">
-                <MdLocationOn className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" /> {address}
-              </div>
-            )}
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-4">
+          <div className={`w-12 h-12 flex items-center justify-center text-xl flex-shrink-0 border ${colorClass} transition-transform group-hover:scale-110`} style={{clipPath:'polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%)'}}>
+            {icon}
           </div>
-          {notes && <p className="text-xs text-gray-400 mt-2 italic">{notes}</p>}
+          <div className="flex-1 min-w-0 pr-12">
+            <span className={`inline-block text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 mb-2 ${colorClass}`}>{category}</span>
+            <h3 className="font-heading font-bold text-navy-900 text-base leading-tight group-hover:text-saffron-600 transition-colors drop-shadow-sm">{name}</h3>
+          </div>
         </div>
+        
+        <div className="space-y-2 mt-2 pt-4 border-t border-navy-100">
+          <a href={`tel:${phone}`} className="flex items-center gap-3 text-sm text-navy-900 font-bold hover:text-saffron-600 transition-colors">
+            <div className="w-6 h-6 rounded-full bg-saffron-100 flex items-center justify-center text-saffron-600 shrink-0">
+              <MdPhone className="w-3.5 h-3.5" />
+            </div>
+            <span className="tracking-wide">{phone}</span>
+          </a>
+          {email && (
+            <a href={`mailto:${email}`} className="flex items-center gap-3 text-sm text-navy-600 hover:text-navy-900 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-navy-50 flex items-center justify-center text-navy-500 shrink-0">
+                <MdEmail className="w-3 h-3" />
+              </div>
+              <span className="truncate">{email}</span>
+            </a>
+          )}
+          {address && (
+            <div className="flex items-start gap-3 text-xs text-navy-500">
+              <div className="w-6 h-6 rounded-full bg-navy-50 flex items-center justify-center text-navy-500 shrink-0 mt-0.5">
+                <MdLocationOn className="w-3.5 h-3.5" />
+              </div>
+              <span className="leading-relaxed">{address}</span>
+            </div>
+          )}
+        </div>
+        {notes && <p className="text-[11px] text-navy-400 mt-2 font-light italic">{notes}</p>}
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const socialIcons = [
 ];
 
 const Footer = () => (
-  <footer className="bg-navy-800 text-white">
+  <footer className="bg-[#222222] text-white">
     {/* CTA Banner */}
     <div className="bg-saffron-600 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -39,7 +39,7 @@ const Footer = () => (
               <div className="text-saffron-400 text-sm">BJP | Vashi, Navi Mumbai</div>
             </div>
           </div>
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-[#C4AC84] text-sm leading-relaxed">
             Dedicated to serving the people of Vashi and Navi Mumbai. Committed to development, citizen welfare, and transparent governance.
           </p>
           {/* Social links */}
@@ -70,7 +70,7 @@ const Footer = () => (
           <ul className="space-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.path}>
-                <Link to={link.path} className="text-gray-300 hover:text-saffron-400 text-sm transition-colors flex items-center gap-2">
+                <Link to={link.path} className="text-[#C4AC84] hover:text-saffron-400 text-sm transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-saffron-600 rounded-full flex-shrink-0" />
                   {link.label}
                 </Link>
@@ -81,7 +81,7 @@ const Footer = () => (
 
         {/* Citizen Services */}
         <div>
-          <h4 className="font-bold text-base mb-4 border-b border-white/20 pb-2">Citizen Services</h4>
+          <h4 className="font-bold text-base mb-4 border-b border-white/10 pb-2">Citizen Services</h4>
           <ul className="space-y-2">
             {[
               { label: 'Voter Services Portal', href: 'https://voters.eci.gov.in/' },
@@ -91,7 +91,7 @@ const Footer = () => (
               { label: 'Ayushman Card (PMJAY)', href: 'https://beneficiary.nha.gov.in/' },
             ].map(({ label, href }) => (
               <li key={label}>
-                <a href={href} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-saffron-400 text-sm transition-colors flex items-center gap-2">
+                <a href={href} target="_blank" rel="noopener noreferrer" className="text-[#C4AC84] hover:text-saffron-400 text-sm transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-saffron-600 rounded-full flex-shrink-0" />
                   {label}
                 </a>
@@ -105,20 +105,20 @@ const Footer = () => (
           <h4 className="font-bold text-base mb-4 border-b border-white/20 pb-2">Contact Us</h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <MdPhone className="w-4 h-4 text-saffron-400 flex-shrink-0 mt-0.5" />
-              <a href={`tel:${CONTACT_INFO.phone}`} className="text-gray-300 hover:text-white text-sm transition-colors">{CONTACT_INFO.phone}</a>
+              <MdPhone className="w-4 h-4 text-saffron-500 flex-shrink-0 mt-0.5" />
+              <a href={`tel:${CONTACT_INFO.phone}`} className="text-[#C4AC84] hover:text-white text-sm transition-colors">{CONTACT_INFO.phone}</a>
             </li>
             <li className="flex items-start gap-3">
-              <MdEmail className="w-4 h-4 text-saffron-400 flex-shrink-0 mt-0.5" />
-              <a href={`mailto:${CONTACT_INFO.email}`} className="text-gray-300 hover:text-white text-sm transition-colors break-all">{CONTACT_INFO.email}</a>
+              <MdEmail className="w-4 h-4 text-saffron-500 flex-shrink-0 mt-0.5" />
+              <a href={`mailto:${CONTACT_INFO.email}`} className="text-[#C4AC84] hover:text-white text-sm transition-colors break-all">{CONTACT_INFO.email}</a>
             </li>
             <li className="flex items-start gap-3">
-              <MdLocationOn className="w-4 h-4 text-saffron-400 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-300 text-sm">{CONTACT_INFO.address}</span>
+              <MdLocationOn className="w-4 h-4 text-saffron-500 flex-shrink-0 mt-0.5" />
+              <span className="text-[#C4AC84] text-sm">{CONTACT_INFO.address}</span>
             </li>
             <li className="flex items-start gap-3">
-              <MdAccessTime className="w-4 h-4 text-saffron-400 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-300 text-sm">{CONTACT_INFO.officeHours}</span>
+              <MdAccessTime className="w-4 h-4 text-saffron-500 flex-shrink-0 mt-0.5" />
+              <span className="text-[#C4AC84] text-sm">{CONTACT_INFO.officeHours}</span>
             </li>
           </ul>
         </div>
@@ -127,7 +127,7 @@ const Footer = () => (
 
     {/* Bottom bar */}
     <div className="border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#9A8060]">
         <span>© {new Date().getFullYear()} Vijay Walunj. All rights reserved.</span>
         <span>Designed with ❤️ for the people of Vashi, Navi Mumbai</span>
       </div>
