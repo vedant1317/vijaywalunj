@@ -37,6 +37,17 @@ npm install
 npm run dev            # Starts on http://localhost:5173
 ```
 
+### Vercel Testing Setup
+
+For a quick test deploy, use the repo root as the Vercel project root.
+
+1. Set the project root to the repository root, not `frontend/` or `backend/`.
+2. Set `MONGO_URI`, `JWT_SECRET`, and any `YOUTUBE_*` env vars in Vercel.
+3. If you want strict CORS, set `FRONTEND_URL` or `FRONTEND_URLS` to your Vercel domain(s).
+4. Deploy. Frontend routes are served from `frontend/dist`, and API routes are handled from `api/[...all].js`.
+
+Note: file uploads use local disk storage in the backend, so they are not a good fit for permanent use on Vercel. For testing the main site, news, videos, auth, and grievance APIs, this setup works.
+
 ---
 
 ## Environment Variables (backend/.env)
@@ -49,6 +60,12 @@ npm run dev            # Starts on http://localhost:5173
 | `JWT_EXPIRES_IN` | JWT expiry (default: 7d) |
 | `FRONTEND_URL` | Frontend URL for CORS |
 | `NODE_ENV` | development / production |
+| `YOUTUBE_PLAYLIST_ID` | Optional: curated YouTube playlist ID for only Vijay Walunj videos |
+| `YOUTUBE_CHANNEL_ID` | Optional: YouTube channel ID for automatic video sync |
+| `YOUTUBE_RSS_URL` | Optional: direct YouTube RSS feed URL if you prefer to use one |
+| `YOUTUBE_SYNC_INTERVAL_MINUTES` | How often the backend refreshes the video feed |
+| `YOUTUBE_SYNC_LIMIT` | Max number of videos to sync from YouTube |
+| `YOUTUBE_VIDEO_KEYWORDS` | Comma-separated keywords used to keep only relevant videos from a mixed feed |
 
 ---
 
@@ -81,7 +98,8 @@ Before deploying, update the following:
 - [ ] Update gallery images in `VashiPremierLeague.jsx` and `GanrajVashicha.jsx`
 - [ ] Set `MONGO_URI` in `.env` to your MongoDB Atlas connection string
 - [ ] Set a strong `JWT_SECRET` in `.env`
-- [ ] Add seed data for contacts, news, and videos via the admin API
+- [ ] Add seed data for contacts and news via the admin API
+- [ ] Set `YOUTUBE_PLAYLIST_ID` if you maintain a curated playlist, or set `YOUTUBE_VIDEO_KEYWORDS` for a mixed channel feed
 
 ---
 
@@ -105,6 +123,7 @@ PATCH  /api/news/:id             (admin)
 DELETE /api/news/:id             (admin)
 
 GET    /api/videos
+POST   /api/videos/sync          (admin/staff)
 POST   /api/videos               (admin)
 
 GET    /api/testimonials         (approved only)
