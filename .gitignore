@@ -7,3 +7,7 @@ build/
 Thumbs.db
 backend/src/uploads/*
 !backend/src/uploads/.gitkeep
+
+# Local source photos — hosted on Cloudinary, not committed
+ganpati photos/
+vpl photos/

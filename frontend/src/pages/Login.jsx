@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#222222] to-[#2d2d2d] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-ink-900 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
@@ -42,7 +42,7 @@ const Login = () => {
             </div>
           </Link>
           <h1 className="text-2xl font-bold text-white mt-2">Citizen Login</h1>
-          <p className="text-gray-300 text-sm mt-1">Sign in to track your grievances and access services</p>
+          <p className="text-ink-300 text-sm mt-1">Sign in to track your grievances and access services</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-2xl p-8">
@@ -50,7 +50,7 @@ const Login = () => {
             <div>
               <label className="label">Email Address</label>
               <div className="relative">
-                <MdEmail className="absolute left-3.5 top-3.5 text-gray-400 w-5 h-5" />
+                <MdEmail className="absolute left-3.5 top-3.5 text-ink-400 w-5 h-5" />
                 <input
                   type="email"
                   name="email"
@@ -66,7 +66,7 @@ const Login = () => {
             <div>
               <label className="label">Password</label>
               <div className="relative">
-                <MdLock className="absolute left-3.5 top-3.5 text-gray-400 w-5 h-5" />
+                <MdLock className="absolute left-3.5 top-3.5 text-ink-400 w-5 h-5" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   name="password"
@@ -76,7 +76,7 @@ const Login = () => {
                   required
                   className="input-field pl-11 pr-11"
                 />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-3.5 text-gray-400 hover:text-gray-600">
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-3.5 text-ink-400 hover:text-ink-600">
                   {showPassword ? <MdVisibilityOff className="w-5 h-5" /> : <MdVisibility className="w-5 h-5" />}
                 </button>
               </div>
@@ -94,14 +94,14 @@ const Login = () => {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-ink-600">
               Don't have an account?{' '}
               <Link to="/signup" className="text-saffron-600 font-semibold hover:text-saffron-700">Sign Up</Link>
             </p>
           </div>
         </div>
 
-        <p className="text-center text-gray-400 text-xs mt-6">
+        <p className="text-center text-ink-400 text-xs mt-6">
           <Link to="/" className="hover:text-white transition-colors">← Back to Home</Link>
         </p>
       </div>

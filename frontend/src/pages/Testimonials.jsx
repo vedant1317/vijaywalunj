@@ -48,11 +48,11 @@ const Testimonials = () => {
   return (
     <div className="pt-24 pb-16">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-navy-800 to-navy-900 text-white py-14">
+      <div className="bg-ink-900 text-white py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">Public Testimonials</h1>
           <div className="w-16 h-1 bg-saffron-600 mx-auto mb-4 rounded-full" />
-          <p className="text-gray-300 text-base">What the people of Vashi say about our work and services.</p>
+          <p className="text-ink-300 text-base">What the people of Vashi say about our work and services.</p>
         </div>
       </div>
 
@@ -63,20 +63,20 @@ const Testimonials = () => {
             <SectionTitle tag="Citizens Speak" title="What People Say" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
               {testimonials.map((t) => (
-                <div key={t._id} className="card p-5 border border-gray-100 hover:border-saffron-200 transition-all">
+                <div key={t._id} className="card p-5 border border-ink-100 hover:border-saffron-200 transition-all">
                   <div className="text-saffron-400 text-3xl mb-2">"</div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{t.message}</p>
+                  <p className="text-ink-600 text-sm leading-relaxed mb-4">{t.message}</p>
                   <div className="flex items-center gap-3">
                     {t.photoUrl ? (
                       <img src={t.photoUrl} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-saffron-200" />
                     ) : (
-                      <div className="w-10 h-10 bg-navy-100 rounded-full flex items-center justify-center text-navy-700 font-bold text-sm">
+                      <div className="w-10 h-10 bg-ink-100 rounded-full flex items-center justify-center text-ink-700 font-bold text-sm">
                         {t.name.charAt(0)}
                       </div>
                     )}
                     <div>
-                      <div className="font-semibold text-navy-800 text-sm">{t.name}</div>
-                      {t.area && <div className="text-gray-400 text-xs">{t.area}</div>}
+                      <div className="font-semibold text-ink-800 text-sm">{t.name}</div>
+                      {t.area && <div className="text-ink-400 text-xs">{t.area}</div>}
                     </div>
                   </div>
                 </div>
@@ -91,8 +91,8 @@ const Testimonials = () => {
               {submitted ? (
                 <div className="mt-6 text-center py-6">
                   <div className="text-5xl mb-3">🙏</div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">Thank You!</h3>
-                  <p className="text-gray-500 text-sm">Your testimonial has been submitted for review and will appear once approved.</p>
+                  <h3 className="font-bold text-ink-800 text-lg mb-2">Thank You!</h3>
+                  <p className="text-ink-500 text-sm">Your testimonial has been submitted for review and will appear once approved.</p>
                   <button onClick={() => setSubmitted(false)} className="mt-4 text-saffron-600 text-sm font-semibold hover:underline">Submit another</button>
                 </div>
               ) : (
@@ -108,16 +108,16 @@ const Testimonials = () => {
                   <div>
                     <label className="label">Your Message *</label>
                     <textarea name="message" value={form.message} onChange={handleChange} required rows={4} placeholder="Share your experience..." className="input-field resize-none" />
-                    <p className="text-xs text-gray-400 mt-1">{form.message.length} / 500</p>
+                    <p className="text-xs text-ink-400 mt-1">{form.message.length} / 500</p>
                   </div>
                   <div>
-                    <label className="label">Photo <span className="text-xs text-gray-400 font-normal">(optional)</span></label>
-                    <input type="file" accept="image/*" onChange={e => setPhoto(e.target.files[0])} className="text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-saffron-50 file:text-saffron-700 hover:file:bg-saffron-100 cursor-pointer w-full" />
+                    <label className="label">Photo <span className="text-xs text-ink-400 font-normal">(optional)</span></label>
+                    <input type="file" accept="image/*" onChange={e => setPhoto(e.target.files[0])} className="text-sm text-ink-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-saffron-50 file:text-saffron-700 hover:file:bg-saffron-100 cursor-pointer w-full" />
                   </div>
                   <button type="submit" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-60">
                     {loading ? <><span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" /> Submitting...</> : 'Submit Testimonial'}
                   </button>
-                  <p className="text-xs text-gray-400 text-center">Testimonials are reviewed before publishing.</p>
+                  <p className="text-xs text-ink-400 text-center">Testimonials are reviewed before publishing.</p>
                 </form>
               )}
             </div>

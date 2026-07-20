@@ -41,7 +41,7 @@ const Signup = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#222222] to-[#2d2d2d] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-ink-900 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-lg">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-3 mb-4">
@@ -52,7 +52,7 @@ const Signup = () => {
             </div>
           </Link>
           <h1 className="text-2xl font-bold text-white mt-2">Citizen Registration</h1>
-          <p className="text-gray-300 text-sm mt-1">Create your account to access citizen services</p>
+          <p className="text-ink-300 text-sm mt-1">Create your account to access citizen services</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-2xl p-8">
@@ -61,7 +61,7 @@ const Signup = () => {
               <div key={name}>
                 <label className="label">{label}</label>
                 <div className="relative">
-                  <Icon className="absolute left-3.5 top-3.5 text-gray-400 w-5 h-5" />
+                  <Icon className="absolute left-3.5 top-3.5 text-ink-400 w-5 h-5" />
                   <input type={type} name={name} value={form[name]} onChange={handleChange} placeholder={placeholder} required className="input-field pl-11" />
                 </div>
               </div>
@@ -70,9 +70,9 @@ const Signup = () => {
             <div>
               <label className="label">Password</label>
               <div className="relative">
-                <MdLock className="absolute left-3.5 top-3.5 text-gray-400 w-5 h-5" />
+                <MdLock className="absolute left-3.5 top-3.5 text-ink-400 w-5 h-5" />
                 <input type={showPassword ? 'text' : 'password'} name="password" value={form.password} onChange={handleChange} placeholder="Min. 6 characters" required className="input-field pl-11 pr-11" />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-3.5 text-gray-400 hover:text-gray-600">
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-3.5 text-ink-400 hover:text-ink-600">
                   {showPassword ? <MdVisibilityOff className="w-5 h-5" /> : <MdVisibility className="w-5 h-5" />}
                 </button>
               </div>
@@ -82,7 +82,7 @@ const Signup = () => {
               <div>
                 <label className="label">Area</label>
                 <div className="relative">
-                  <MdLocationOn className="absolute left-3 top-3.5 text-gray-400 w-4 h-4" />
+                  <MdLocationOn className="absolute left-3 top-3.5 text-ink-400 w-4 h-4" />
                   <input type="text" name="area" value={form.area} onChange={handleChange} placeholder="Your area" className="input-field pl-9 text-sm" />
                 </div>
               </div>
@@ -96,8 +96,8 @@ const Signup = () => {
             </div>
 
             <label className="flex items-start gap-3 cursor-pointer group mt-2">
-              <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-gray-300 text-saffron-600 focus:ring-saffron-500" />
-              <span className="text-sm text-gray-600">I consent to this website collecting my details for citizen services. Information will not be shared with third parties.</span>
+              <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-ink-300 text-saffron-600 focus:ring-saffron-500" />
+              <span className="text-sm text-ink-600">I consent to this website collecting my details for citizen services. Information will not be shared with third parties.</span>
             </label>
 
             <button type="submit" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mt-2">
@@ -108,13 +108,13 @@ const Signup = () => {
           </form>
 
           <div className="mt-5 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-ink-600">
               Already have an account?{' '}
               <Link to="/login" className="text-saffron-600 font-semibold hover:text-saffron-700">Sign In</Link>
             </p>
           </div>
         </div>
-        <p className="text-center text-gray-400 text-xs mt-6">
+        <p className="text-center text-ink-400 text-xs mt-6">
           <Link to="/" className="hover:text-white transition-colors">← Back to Home</Link>
         </p>
       </div>

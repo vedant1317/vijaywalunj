@@ -27,11 +27,11 @@ const OTHER_LINKS = [
 
 const NmmcServices = () => (
   <div className="pt-24 pb-16">
-    <div className="bg-gradient-to-r from-navy-800 to-navy-900 text-white py-14">
+    <div className="bg-ink-900 text-white py-14">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-3">Online NMMC Services</h1>
         <div className="w-16 h-1 bg-saffron-600 mx-auto mb-4 rounded-full" />
-        <p className="text-gray-300 text-base max-w-2xl mx-auto">
+        <p className="text-ink-300 text-base max-w-2xl mx-auto">
           Access Navi Mumbai Municipal Corporation services online. Pay bills, file complaints, and manage civic services.
         </p>
       </div>
@@ -42,13 +42,13 @@ const NmmcServices = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
         {SERVICES.map(({ icon, title, description, url, features }) => (
-          <div key={title} className="card p-8 flex flex-col border border-gray-100 hover:border-saffron-200 transition-all">
+          <div key={title} className="card p-8 flex flex-col border border-ink-100 hover:border-saffron-200 transition-all">
             <div className="text-5xl mb-4">{icon}</div>
-            <h2 className="text-xl font-bold text-navy-800 mb-2">{title}</h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-grow">{description}</p>
+            <h2 className="text-xl font-bold text-ink-800 mb-2">{title}</h2>
+            <p className="text-ink-500 text-sm leading-relaxed mb-5 flex-grow">{description}</p>
             <ul className="space-y-2 mb-6">
               {features.map(f => (
-                <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
+                <li key={f} className="flex items-center gap-2 text-sm text-ink-600">
                   <span className="w-4 h-4 bg-green-100 text-green-600 rounded-full text-xs flex items-center justify-center">✓</span>
                   {f}
                 </li>
@@ -68,15 +68,15 @@ const NmmcServices = () => (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
           {OTHER_LINKS.map(({ title, url, icon }) => (
             <a key={title} href={url} target="_blank" rel="noopener noreferrer"
-              className="card p-4 text-center hover:border-saffron-200 border border-gray-100 transition-all group">
+              className="card p-4 text-center hover:border-saffron-200 border border-ink-100 transition-all group">
               <div className="text-3xl mb-2">{icon}</div>
-              <div className="text-xs font-semibold text-navy-800 group-hover:text-saffron-600 transition-colors leading-tight">{title}</div>
+              <div className="text-xs font-semibold text-ink-800 group-hover:text-saffron-600 transition-colors leading-tight">{title}</div>
             </a>
           ))}
         </div>
       </div>
 
-      <div className="mt-10 bg-navy-50 border border-navy-200 rounded-xl p-5 text-sm text-navy-700">
+      <div className="mt-10 bg-ink-50 border border-ink-200 rounded-xl p-5 text-sm text-ink-700">
         <strong>Note:</strong> All above links redirect to the official NMMC website (nmmc.gov.in). For any technical issues with NMMC portal, contact NMMC Helpline: <a href="tel:18002200033" className="font-semibold text-saffron-600">1800-22-0033</a>.
       </div>
     </div>

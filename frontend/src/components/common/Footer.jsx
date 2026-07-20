@@ -6,14 +6,14 @@ import {
 import { MdEmail, MdPhone, MdLocationOn, MdAccessTime } from 'react-icons/md';
 
 const socialIcons = [
-  { Icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: 'Facebook', color: 'hover:bg-blue-600' },
-  { Icon: FaInstagram, href: SOCIAL_LINKS.instagram, label: 'Instagram', color: 'hover:bg-pink-600' },
-  { Icon: FaXTwitter, href: SOCIAL_LINKS.twitter, label: 'X (Twitter)', color: 'hover:bg-gray-700' },
-  { Icon: FaYoutube, href: SOCIAL_LINKS.youtube, label: 'YouTube', color: 'hover:bg-red-600' },
+  { Icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+  { Icon: FaInstagram, href: SOCIAL_LINKS.instagram, label: 'Instagram' },
+  { Icon: FaXTwitter, href: SOCIAL_LINKS.twitter, label: 'X (Twitter)' },
+  { Icon: FaYoutube, href: SOCIAL_LINKS.youtube, label: 'YouTube' },
 ];
 
 const Footer = () => (
-  <footer className="bg-[#222222] text-white">
+  <footer className="bg-ink-900 text-white">
     {/* CTA Banner */}
     <div className="bg-saffron-600 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -21,7 +21,7 @@ const Footer = () => (
           <h3 className="font-bold text-lg text-white">Have a grievance? We're here to help.</h3>
           <p className="text-white/90 text-sm">Submit your concern and get a reference ID for tracking.</p>
         </div>
-        <Link to="/grievance" className="flex-shrink-0 bg-white text-saffron-700 font-bold px-6 py-2.5 rounded-lg hover:bg-gray-100 transition-colors shadow-md">
+        <Link to="/grievance" className="flex-shrink-0 bg-white text-saffron-700 font-bold px-6 py-2.5 rounded-lg hover:bg-ink-100 transition-colors shadow-md">
           Submit Grievance
         </Link>
       </div>
@@ -44,14 +44,14 @@ const Footer = () => (
           </p>
           {/* Social links */}
           <div className="flex items-center gap-3 mt-5">
-            {socialIcons.map(({ Icon, href, label, color }) => (
+            {socialIcons.map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className={`w-9 h-9 bg-white/10 ${color} rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110`}
+                className="w-9 h-9 bg-white/10 hover:bg-saffron-600 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               >
                 <Icon className="w-4 h-4" />
               </a>

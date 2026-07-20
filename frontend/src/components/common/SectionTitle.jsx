@@ -9,7 +9,7 @@ const SectionTitle = ({ tag, title, subtitle, center = false, light = false }) =
         {center && <div className="w-8 h-[1px] bg-saffron-600"></div>}
       </div>
     )}
-    <h2 className={`text-4xl sm:text-5xl font-heading font-bold ${light ? 'text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]' : 'text-navy-900 drop-shadow-sm'} leading-tight tracking-tight`}>
+    <h2 className={`text-4xl sm:text-5xl font-heading font-bold ${light ? 'text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]' : 'text-ink-900 drop-shadow-sm'} leading-tight tracking-tight`}>
       {title}
     </h2>
     <div className={`mt-4 ${center ? 'mx-auto flex gap-1 justify-center' : 'flex gap-1'}`}>
@@ -17,7 +17,7 @@ const SectionTitle = ({ tag, title, subtitle, center = false, light = false }) =
       <div className="w-2 h-1 bg-saffron-400"></div>
     </div>
     {subtitle && (
-      <p className={`mt-6 text-sm font-light leading-relaxed ${light ? 'text-navy-200' : 'text-navy-600'} max-w-2xl ${center ? 'mx-auto' : ''}`}>
+      <p className={`mt-6 text-sm font-light leading-relaxed ${light ? 'text-ink-200' : 'text-ink-600'} max-w-2xl ${center ? 'mx-auto' : ''}`}>
         {subtitle}
       </p>
     )}

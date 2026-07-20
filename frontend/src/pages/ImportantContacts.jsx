@@ -55,11 +55,11 @@ const ImportantContacts = () => {
   return (
     <div className="pt-24 pb-16">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-red-900 via-navy-800 to-navy-900 text-white py-14">
+      <div className="bg-ink-900 text-white py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">Important Contacts</h1>
           <div className="w-16 h-1 bg-saffron-600 mx-auto mb-4 rounded-full" />
-          <p className="text-gray-300 text-base max-w-2xl mx-auto">
+          <p className="text-ink-300 text-base max-w-2xl mx-auto">
             Emergency numbers, hospital contacts, police stations, NMMC helplines — all important contacts for Vashi and Navi Mumbai.
           </p>
         </div>
@@ -80,7 +80,7 @@ const ImportantContacts = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all ${activeCategory === cat ? 'bg-saffron-600 text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-saffron-300 hover:text-saffron-600'}`}
+                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all ${activeCategory === cat ? 'bg-saffron-600 text-white shadow-md' : 'bg-white border border-ink-200 text-ink-600 hover:border-saffron-300 hover:text-saffron-600'}`}
               >
                 {cat}
               </button>
@@ -109,7 +109,7 @@ const ImportantContacts = () => {
         )}
 
         {filtered.length === 0 && (
-          <div className="text-center py-16 text-gray-400">
+          <div className="text-center py-16 text-ink-400">
             <div className="text-5xl mb-3">🔍</div>
             <p>No contacts found matching your search.</p>
           </div>

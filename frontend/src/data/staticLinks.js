@@ -2,7 +2,7 @@ export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/',
   instagram: 'https://www.instagram.com/',
   twitter: 'https://x.com/',
-  youtube: 'https://www.youtube.com/',
+  youtube: 'https://www.youtube.com/@Vijay_Walunj',
   namo: 'https://narendramodi.in/',
   esaral: 'https://esaral.com/',
 };

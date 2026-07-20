@@ -7,8 +7,8 @@ const ServiceCard = ({ icon, title, description, linkTo, linkHref, external = fa
         {icon}
       </div>
       <div className="flex-1">
-        <h3 className="font-heading font-bold text-navy-900 text-xl mb-3 group-hover:text-saffron-600 transition-colors leading-tight">{title}</h3>
-        <p className="text-navy-600 text-sm font-light leading-relaxed">{description}</p>
+        <h3 className="font-heading font-bold text-ink-900 text-xl mb-3 group-hover:text-saffron-600 transition-colors leading-tight">{title}</h3>
+        <p className="text-ink-600 text-sm font-light leading-relaxed">{description}</p>
       </div>
       <div className="mt-auto pt-4 flex items-center justify-between w-full opacity-60 group-hover:opacity-100 transition-opacity">
         <div className="w-8 h-[1px] bg-saffron-600 transition-all duration-300 group-hover:w-16"></div>
